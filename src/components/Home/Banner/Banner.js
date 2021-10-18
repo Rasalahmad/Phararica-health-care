@@ -15,12 +15,12 @@ const Banner = () => {
                         src={banner1}
                         alt="First slide"
                     />
-                    <Carousel.Caption className = 'text-end'>
+                    <Carousel.Caption className='text-end'>
                         <h3>Medicines cure diseases </h3> <h3> but only doctors can cure patients</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                <Carousel.Caption className = 'text-start'>
+                    <Carousel.Caption className='text-start'>
                         <h3>People pay the doctor for his trouble</h3>
                         <h3>for his kindness they still remain in his debt</h3>
                     </Carousel.Caption>
@@ -37,7 +37,7 @@ const Banner = () => {
                         src={banner3}
                         alt="Third slide"
                     />
-                    <Carousel.Caption className = 'text-end'>
+                    <Carousel.Caption className='text-end'>
                         <h3>Our job is the improving the quality of life</h3>
                         <h3>Not just delaying death</h3>
                     </Carousel.Caption>

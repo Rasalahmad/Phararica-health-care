@@ -1,0 +1,44 @@
+[
+  {
+    "id": 201,
+    "name": "Therapiya",
+    "img": "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20210408120529/ri/673/picture/2021/4/shutterstock_658289803.jpg",
+    "description": "Medical therapy describes taking medications for treatment of a condition like heart disease. Medical therapy is almost always recommended - in combination with a nutritious diet, exercise and no smoking -  to improve your heart health and quality of life. Even when heart patients undergo angioplasty or surgery, they must continue to take medicines and make lifestyle changes.",
+    "price": 10000
+  },
+  {
+    "id": 202,
+    "name": "Dentistry",
+    "img": "https://inmedical.sdemo.site/wp-content/uploads/2017/01/department_9-1-870x450.jpg",
+    "description": "Our dental facilities are state-of-the-art and combine the latest high tech equipment along with an ergonomic layout, including specialty X-rays (Panorex and cone-beam). This unique environment enhances our ability to offer the highest quality of comprehensive oral hygiene for patients of all ages.",
+    "price": 7000
+  },
+  {
+    "id": 203,
+    "name": "Virusology",
+    "img": "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20210317042030/ri/673/picture/2021/3/shutterstock_1637613388.jpg",
+    "description": "Viruses have traditionally been viewed in a rather negative context as agents responsible for diseases that must be controlled or eliminated. However, viruses also have certain beneficial properties that can be exploited for useful purposes, as is evident in both gene therapy and vaccinology.",
+    "price": 12000
+  },
+  {
+    "id": 204,
+    "name": "Pharmocology",
+    "img": "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20160629011825/ri/590/picture/2016/6/Pharmacology_shutterstock_343483487.jpg",
+    "description": "Pharmacologic treatment alone should not be relied upon for treatment of chronic pain, but rather used as an adjunct to patient engagement and other modalities. Pharmacologic treatments should be initiated to increase function and restore a patient’s overall quality of life, not just pain relief. Medications are not the focus of treatment in managing pain. They should be used when needed to meet overall goals of therapy in conjunction with other treatment modalities, such as psychosocial, rehabilitation and functional management, non-pharmacologic, complementary medicine and interventional management.",
+    "price": 20000
+  },
+  {
+    "id": 205,
+    "name": "Cardiology",
+    "img": "https://www.ccpdocs.com/images/uploads/assets/Conditions-heart-in-page.png",
+    "description": "Interventional cardiology is a non-surgical option which uses a small, flexible tube called a catheter to repair damaged or weakened vessels, narrowed arteries, or other affected parts of the heart structure. An interventional cardiologist is a cardiologist with one to two years of additional education and training in diagnosing and treating cardiovascular disease as well as congenital (present at birth) and structural heart conditions through catheter-based procedures, such as angioplasty and stenting.",
+    "price": 50000
+  },
+  {
+    "id": 206,
+    "name": "Eye Surgery",
+    "img": "https://www.asahq.org/madeforthismoment/wp-content/uploads/2020/10/ASA-237-MFTM-Website-Graphics-Refresh-dp-1.29.jpg",
+    "description": "Eye surgery is used to treat a variety of conditions, including cataracts, glaucoma, detached retinas, retinal tears, diabetic retinopathy, and nearsightedness or farsightedness.Common types of eye surgery are explained below. The descriptions incorporate information provided by the National Eye Institute, National Institutes of Health.",
+    "price": 100000
+  }
+]
