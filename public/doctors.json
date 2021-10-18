@@ -1,6 +1,6 @@
 [
   {
-    "id": "201",
+    "id": 201,
     "name": "Ma Aye Sain Marma",
     "expert": "SURGEON",
     "day1": "Monday-Friday",
@@ -12,7 +12,7 @@
     "img": "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
   },
   {
-    "id": "202",
+    "id": 202,
     "name": "Sharif Durjoy",
     "expert": "DENTIST",
     "day1": "Monday-Friday",
@@ -24,7 +24,7 @@
     "img": "https://st3.depositphotos.com/10654668/i/600/depositphotos_138445604-stock-photo-male-doctor-in-hospital.jpg"
   },
   {
-    "id": "203",
+    "id": 203,
     "name": "Ayon Barua",
     "expert": "SURGEON",
     "day1": "Monday-Friday",
@@ -36,7 +36,7 @@
     "img": "https://st4.depositphotos.com/1000816/i/600/depositphotos_201537716-stock-photo-successful-doctor-the-therapist-standing.jpg"
   },
   {
-    "id": "204",
+    "id": 204,
     "name": "Pranto Chowdhury",
     "expert": "THERAPIST",
     "day1": "Monday-Friday",
@@ -48,7 +48,7 @@
     "img": "https://st3.depositphotos.com/12985790/i/600/depositphotos_188891364-stock-photo-happy-adult-doctor-sitting-workplace.jpg"
   },
   {
-    "id": "205",
+    "id": 205,
     "name": "Ahtesamul Haque",
     "expert": "MANAGER",
     "day1": "Monday-Friday",
@@ -60,7 +60,7 @@
     "img": "https://st3.depositphotos.com/10654668/i/600/depositphotos_138447116-stock-photo-male-doctor-with-stethoscope.jpg"
   },
   {
-    "id": "206",
+    "id": 206,
     "name": "Pial Baura",
     "expert": "NURSE",
     "day1": "Monday-Friday",
@@ -72,7 +72,7 @@
     "img": "https://st3.depositphotos.com/10654668/i/600/depositphotos_135128882-stock-photo-male-doctor-with-stethoscope.jpg"
   },
   {
-    "id": "207",
+    "id": 207,
     "name": "Rasel Ahmad",
     "expert": "SURGEON",
     "day1": "Monday-Friday",
@@ -84,7 +84,7 @@
     "img": "https://st3.depositphotos.com/9880800/i/600/depositphotos_178376834-stock-photo-doctor.jpg"
   },
   {
-    "id": "208",
+    "id": 208,
     "name": "Punam Das",
     "expert": "NURSE",
     "day1": "Monday-Friday",

@@ -11,7 +11,7 @@ const Doctors = () => {
     console.log(doctors)
     return (
         <div>
-            <h2>Our Team</h2>
+            <h2 className = 'my-5'>Our Team</h2>
             <div className = 'row'>
                 {
                     doctors.map(doctor => <Doctor
