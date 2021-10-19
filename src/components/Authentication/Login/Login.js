@@ -36,7 +36,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error.message))
     }
 
     const handleEmail = (e) => {
@@ -53,7 +53,7 @@ const Login = () => {
     return (
         <div className='row mt-5 container'>
             <h2 className = 'my-5'>SIGN IN</h2>
-            <div className='col-md-6'>
+            <div className='col-md-6 col-sm-12 mt-5'>
                 <div className="form-floating mb-3">
                     <input onChange = {handleEmail} type="email" className="form-control" id="floatingInput" placeholder="name@example.com" required />
                     <label htmlFor="floatingInput">Email address</label>
@@ -67,6 +67,9 @@ const Login = () => {
                 </p>
                 <button onClick = {handleGoogleSignIn} className='btn btn-primary me-2'>Sign Up With Google</button>
                 <button onClick = {handleGithubSignIn} className='btn btn-secondary'>Sign Up With Github</button>
+            </div>
+            <div className = 'col-md-6 col-sm-12'>
+                <img className = 'w-100' src="https://image.freepik.com/free-vector/isometric-data-protection-concept-with-parent-child-login-window-lock-3d_1284-63713.jpg" alt="" />
             </div>
         </div>
     );
