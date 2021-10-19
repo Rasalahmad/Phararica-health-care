@@ -12,15 +12,7 @@ const useFirebase = () => {
     const githubProvider = new GithubAuthProvider();
 
     const handleRegister = (email, password, name) => {
-        createUserWithEmailAndPassword(auth, email, password)
-        // .then(result => {
-        //     setUser(result.user)
-        //     setError('');
-        //     setUserName(name);
-        //     console.log(result.user);
-
-        // })
-        // .catch(error => setError(error.message))
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const handleLogin = (email, password) => {
@@ -46,7 +38,9 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
             displayName: name
         })
-        .then(result => {})
+        .then(result => {
+            setUser(result?.user)
+        })
     }
 
     // observe wheather user state change or not
@@ -60,6 +54,7 @@ const useFirebase = () => {
     return {
         user,
         error,
+        setUserName,
         handleRegister,
         handleLogin,
         signInUsingGoogle,
