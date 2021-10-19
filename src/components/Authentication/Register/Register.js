@@ -1,34 +1,56 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory, useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth'
 
 const Register = () => {
-    const {signInUsingGoogle, handleRegister} = useAuth();
 
-    const [email, setEmail] = useState([]);
+    const {bookId} = useParams();
+
+    const [email, setEmail] = useState([])
     const [password, setPassword] = useState([]);
     const [name, setName] = useState([]);
 
-    // const history = useHistory
+    const {signInUsingGoogle, handleRegister, signInUsingGithub} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from || `/booking/${bookId}`
 
-    const handleName = (e) => {
-        setName(e.target.value);
+    const handleGoogleSignup = () => {
+        signInUsingGoogle()
+        .then(result => {
+            history.push(redirect_url)
+        })
+    }
+     
+    const handleGithubSignup = () => {
+        signInUsingGithub()
+        .then(result => {
+            history.push(redirect_url);
+        })
+    }
+
+    const handleManualSignup = () => {
+        handleRegister(email, password, name)
+        .then(result => {
+            history.push(redirect_url);
+        })
     }
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
+
+
+
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
 
 
-    const handleUserRegister = () => {
-        handleRegister(email, password, name);
-        
+    const handleName = (e) => {
+        setName(e.target.value);
     }
-
-
+    
     return (
         <div className='row mt-5 container'>
             <h2 className = 'my-5'>SIGN UP</h2>
@@ -45,11 +67,11 @@ const Register = () => {
                     <input onChange = {handlePassword} type="password" className="form-control" id="floatingPassword" placeholder="Password" />
                     <label for="floatingPassword">Password</label>
                 </div>
-                <button onClick = {handleUserRegister} type = 'submit' className='btn btn-primary my-5'>Create Account</button>
+                <button onClick = {handleManualSignup} type = 'submit' className='btn btn-primary my-5'>Create Account</button>
                 <p>Already have and account? <Link to='/login'>Sign in</Link>
                 </p>
-                <button onClick = {signInUsingGoogle} className='btn btn-primary me-2'>Sign Up With Google</button>
-                <button className='btn btn-secondary'>Sign Up With Github</button>
+                <button onClick = {handleGoogleSignup} className='btn btn-primary me-2'>Sign Up With Google</button>
+                <button onClick = {handleGithubSignup} className='btn btn-secondary'>Sign Up With Github</button>
             </div>
         </div>
     );

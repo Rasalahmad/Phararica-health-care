@@ -13,9 +13,9 @@ const Header = () => {
                     <Navbar.Brand href="#home">PAHARICA HOSPITAL</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/services">Services</Nav.Link>
-                        <Nav.Link as={HashLink} to="/about">About US</Nav.Link>
+                        <Nav.Link as={HashLink} to="/blogs">Blog</Nav.Link>
                         <Nav.Link as={HashLink} to="/doctors">Doctors</Nav.Link>
 
                         {user?.email ?
@@ -26,7 +26,7 @@ const Header = () => {
                         }
 
                         <Navbar.Text>
-                            Signed in as: <a href="#login">{user.email}</a>
+                            Signed in as: <a href="#login">{user?.displayName}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

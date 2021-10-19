@@ -1,28 +1,51 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory, useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+
 
 const Login = () => {
 
+    const {bookId} = useParams();
 
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([]);
 
-    const {signInUsingGoogle, handleLogin} = useAuth();
+    const {signInUsingGoogle, handleLogin, signInUsingGithub} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from || `/booking/${bookId}`
 
-    // const history = useHistory
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle()
+        .then(result => {
+            history.push(redirect_url)
+        })
+    }
+     
+    const handleGithubSignIn = () => {
+        signInUsingGithub()
+        .then(result => {
+            history.push(redirect_url);
+        })
+    }
+
+    const handleManualSignIn = () => {
+        handleLogin(email, password)
+        .then(result => {
+            history.push(redirect_url);
+        })
+    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
+
+
+
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
 
-    const handleUserLogin = () => {
-        handleLogin(email, password);
-        console.log(email, password);
-    }
 
     return (
         <div className='row mt-5 container'>
@@ -36,11 +59,11 @@ const Login = () => {
                     <input onChange = {handlePassword} type="password" className="form-control" id="floatingPassword" placeholder="Password" required/>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
-                <button onClick = {handleUserLogin} type = 'submit' className='btn btn-primary my-5'>Sign in</button>
+                <button onClick = {handleManualSignIn} type = 'submit' className='btn btn-primary my-5'>Sign in</button>
                 <p>New User? <Link to='/signup'>Sign up</Link>
                 </p>
-                <button onClick = {signInUsingGoogle} className='btn btn-primary me-2'>Sign Up With Google</button>
-                <button className='btn btn-secondary'>Sign Up With Github</button>
+                <button onClick = {handleGoogleSignIn} className='btn btn-primary me-2'>Sign Up With Google</button>
+                <button onClick = {handleGithubSignIn} className='btn btn-secondary'>Sign Up With Github</button>
             </div>
         </div>
     );

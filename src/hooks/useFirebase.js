@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword,  createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword,  createUserWithEmailAndPassword, updateProfile, GithubAuthProvider , signOut } from "firebase/auth";
 import initializeAuthentication from "../firebase/firebase.init";
 
 initializeAuthentication();
@@ -9,35 +9,30 @@ const useFirebase = () => {
     const [error, setError] = useState("");
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleRegister = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user)
-            setError('');
-            setUserName(name);
-            console.log(result.user);
+        // .then(result => {
+        //     setUser(result.user)
+        //     setError('');
+        //     setUserName(name);
+        //     console.log(result.user);
 
-        })
-        .catch(error => setError(error.message))
+        // })
+        // .catch(error => setError(error.message))
     }
 
     const handleLogin = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user);
-            console.log(result.user)
-        })
-        .catch(error => console.log(error.message))
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            setUser(result.user)
-            console.log(result.user)
-        })
-        .catch(error => setError(error.message))
+        return signInWithPopup(auth, googleProvider)
+    }
+
+    const signInUsingGithub = () => {
+        return signInWithPopup(auth, githubProvider)
     }
 
     const logOut = () => {
@@ -68,6 +63,7 @@ const useFirebase = () => {
         handleRegister,
         handleLogin,
         signInUsingGoogle,
+        signInUsingGithub,
         logOut
 
     }
