@@ -20,6 +20,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url)
         })
+        .catch(error => console.log(error));
     }
      
     const handleGithubSignIn = () => {
@@ -27,6 +28,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
+        .catch(error => console.log(error));
     }
 
     const handleManualSignIn = () => {
@@ -34,6 +36,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
+        .catch(error => console.log(error));
     }
 
     const handleEmail = (e) => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import './Booking.css'
 
 const Booking = () => {
@@ -21,7 +22,9 @@ const Booking = () => {
             <h1>{singleService?.name}</h1>
             <p>{singleService?.description}</p>
             <p>Fees: {singleService?.price} tk only</p>
+            <Link to = '/paynow'> 
             <button className = 'btn btn-outline-primary'>Book Now</button>
+            </Link>
         </div>
     );
 };

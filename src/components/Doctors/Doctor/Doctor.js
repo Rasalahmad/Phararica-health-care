@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Doctor.css'
 
 const Doctor = ({ doctor }) => {
@@ -24,9 +23,7 @@ const Doctor = ({ doctor }) => {
                     <p>{time3}</p>
                 </div>
             </div>
-            <Link>
                 <button className = 'btn btn-outline-primary'>Give your Serial</button>
-            </Link>
         </div>
     );
 };

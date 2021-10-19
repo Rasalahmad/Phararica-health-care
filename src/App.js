@@ -6,7 +6,7 @@ import Doctors from './components/Doctors/Doctors/Doctors';
 import Booking from './components/Home/Booking/Booking';
 import Header from './components/Shared/Header/Header';
 import Home from './components/Home/Home/Home';
-import Services from './components/Home/Services/Services';
+import Services from './components/Home/Services/Services/Services';
 import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/Shared/NotFound/NotFound';
 import Register from './components/Authentication/Register/Register';

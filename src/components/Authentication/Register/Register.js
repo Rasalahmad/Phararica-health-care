@@ -10,16 +10,17 @@ const Register = () => {
     const [password, setPassword] = useState([]);
     const [name, setName] = useState([]);
 
-    const {signInUsingGoogle, handleRegister, signInUsingGithub} = useAuth();
+    const {signInUsingGoogle, handleRegister, signInUsingGithub, setUserName} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || `/booking/${bookId}`
 
-    const handleGoogleSignup = () => {
+    const handleGoogleSignUp = () => {
         signInUsingGoogle()
         .then(result => {
-            history.push(redirect_url)
+            history.push(redirect_url);
         })
+        .catch(error => console.log(error.message))
     }
      
     const handleGithubSignup = () => {
@@ -27,13 +28,16 @@ const Register = () => {
         .then(result => {
             history.push(redirect_url);
         })
+        .catch(error => console.log(error.message))
     }
 
     const handleManualSignup = () => {
         handleRegister(email, password, name)
         .then(result => {
             history.push(redirect_url);
+            setUserName(name);
         })
+        .catch(error => console.log(error.message))
     }
 
     const handleEmail = (e) => {
@@ -57,21 +61,21 @@ const Register = () => {
             <div className='col-md-6'>
                 <div className="form-floating mb-3">
                     <input onChange = {handleName} type="text" className="form-control" id="floatingInput" placeholder="Your Name" />
-                    <label for="floatingInput">Your Name</label>
+                    <label htmlFor="floatingInput">Your Name</label>
                 </div>
                 <div className="form-floating mb-3">
                     <input onChange = {handleEmail} type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                    <label for="floatingInput">Email address</label>
+                    <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div className="form-floating">
                     <input onChange = {handlePassword} type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                    <label for="floatingPassword">Password</label>
+                    <label htmlFor="floatingPassword">Password</label>
                 </div>
                 <button onClick = {handleManualSignup} type = 'submit' className='btn btn-primary my-5'>Create Account</button>
                 <p>Already have and account? <Link to='/login'>Sign in</Link>
                 </p>
-                <button onClick = {handleGoogleSignup} className='btn btn-primary me-2'>Sign Up With Google</button>
-                <button onClick = {handleGithubSignup} className='btn btn-secondary'>Sign Up With Github</button>
+                <button onClick = {handleGoogleSignUp} type = 'submit' className='btn btn-primary me-2'>Sign Up With Google</button>
+                <button onClick = {handleGithubSignup} type = 'submit' className='btn btn-secondary'>Sign Up With Github</button>
             </div>
         </div>
     );
