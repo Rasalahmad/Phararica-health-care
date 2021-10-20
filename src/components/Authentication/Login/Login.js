@@ -1,26 +1,25 @@
 import React, {useState} from 'react';
-import { Link, useLocation, useHistory, useParams } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
 
-    const {bookId} = useParams();
-
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([]);
+    const [error, setError] = useState('');
 
     const {signInUsingGoogle, handleLogin, signInUsingGithub} = useAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_url = location.state?.from || `/booking/${bookId}`
+    const redirect_url = location.state?.from || "/home";
 
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
         .then(result => {
             history.push(redirect_url)
         })
-        .catch(error => console.log(error));
+        .catch(error => setError(error));
     }
      
     const handleGithubSignIn = () => {
@@ -28,7 +27,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
-        .catch(error => console.log(error));
+        .catch(error => setError(error));
     }
 
     const handleManualSignIn = () => {
@@ -36,7 +35,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_url);
         })
-        .catch(error => console.log(error.message))
+        .catch(error => setError(error.message))
     }
 
     const handleEmail = (e) => {
@@ -62,6 +61,7 @@ const Login = () => {
                     <input onChange = {handlePassword} type="password" className="form-control" id="floatingPassword" placeholder="Password" required/>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
+                <p className = 'text-danger text-start'>{error}</p>
                 <button onClick = {handleManualSignIn} type = 'submit' className='btn btn-primary my-5'>Sign in</button>
                 <p>New User? <Link to='/signup'>Sign up</Link>
                 </p>

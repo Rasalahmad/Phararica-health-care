@@ -4,23 +4,23 @@ import useAuth from '../../../hooks/useAuth'
 
 const Register = () => {
 
-    const {bookId} = useParams();
 
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([]);
     const [name, setName] = useState([]);
+    const [error, setError] = useState([]);
 
     const {signInUsingGoogle, handleRegister, signInUsingGithub, setUserName} = useAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_url = location.state?.from || `/booking/${bookId}`
+    const redirect_url = location.state?.from || "/home"
 
     const handleGoogleSignUp = () => {
         signInUsingGoogle()
         .then(result => {
             history.push(redirect_url);
         })
-        .catch(error => console.log(error.message))
+        .catch(error => setError(error.message))
     }
      
     const handleGithubSignup = () => {
@@ -28,7 +28,7 @@ const Register = () => {
         .then(result => {
             history.push(redirect_url);
         })
-        .catch(error => console.log(error.message))
+        .catch(error => setError(error.message))
     }
 
     const handleManualSignup = () => {
@@ -37,7 +37,7 @@ const Register = () => {
             history.push(redirect_url);
             setUserName(name);
         })
-        .catch(error => console.log(error.message))
+        .catch(error => setError(error.message))
     }
 
     const handleEmail = (e) => {
@@ -71,6 +71,7 @@ const Register = () => {
                     <input onChange = {handlePassword} type="password" className="form-control" id="floatingPassword" placeholder="Password" />
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
+                <p className = 'text-danger'>{error}</p>
                 <button onClick = {handleManualSignup} type = 'submit' className='btn btn-primary my-5'>Create Account</button>
                 <p>Already have and account? <Link to='/login'>Sign in</Link>
                 </p>

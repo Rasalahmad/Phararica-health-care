@@ -39,8 +39,9 @@ const useFirebase = () => {
             displayName: name
         })
         .then(result => {
-            setUser(result?.user)
+            setUser(result.user)
         })
+        .catch(error => setError(error.message));
     }
 
     // observe wheather user state change or not
@@ -50,7 +51,7 @@ const useFirebase = () => {
                 setUser(user);
             }
         })
-    }, []);
+    }, [user]);
     return {
         user,
         error,
