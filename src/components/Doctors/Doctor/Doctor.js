@@ -23,7 +23,7 @@ const Doctor = ({ doctor }) => {
                     <p>{time3}</p>
                 </div>
             </div>
-                <button className = 'btn btn-outline-primary'>Give your Serial</button>
+                <button className = 'btn btn-outline-primary'>Appointment</button>
         </div>
     );
 };

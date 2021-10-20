@@ -10,7 +10,7 @@ const Doctors = () => {
     }, [])
     console.log(doctors)
     return (
-        <div>
+        <div className = 'container'>
             <h2 className = 'my-5'>Our Team</h2>
             <div className = 'row'>
                 {

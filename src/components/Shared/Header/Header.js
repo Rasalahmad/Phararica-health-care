@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
@@ -13,20 +12,20 @@ const Header = () => {
                     <Navbar.Brand href="#home">PAHARICA HOSPITAL</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
-                        <Nav.Link as={HashLink} to="/services">Services</Nav.Link>
-                        <Nav.Link as={HashLink} to="/blogs">Blog</Nav.Link>
-                        <Nav.Link as={HashLink} to="/doctors">Doctors</Nav.Link>
+                        <Nav.Link as={Link} to="/home" className = 'text-white'>Home</Nav.Link>
+                        <Nav.Link as={Link} to="/services" className = 'text-white'>Services</Nav.Link>
+                        <Nav.Link as={Link} to="/blogs" className = 'text-white'>Blog</Nav.Link>
+                        <Nav.Link as={Link} to="/doctors" className = 'text-white'>Doctors</Nav.Link>
 
                         {user?.email ?
                             <Button onClick={logOut} variant='light'>LogOut</Button> :
                             <span>
-                                <Nav.Link as={Link} to="/login">Sign in</Nav.Link>
+                                <Nav.Link as={Link} to="/login" className = 'text-white'><button className = 'btn btn-secondary'>Sign in</button></Nav.Link>
                             </span>
                         }
 
                         <Navbar.Text>
-                            Signed in as: <a href="#login">{user?.displayName}</a>
+                            <a href="#login" className = 'mx-2'>{user?.displayName}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

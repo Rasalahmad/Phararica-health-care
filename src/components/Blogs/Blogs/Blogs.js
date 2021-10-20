@@ -20,7 +20,7 @@ const Blogs = () => {
             <div className='blog-description'>
                 <div>
                     <p>Albany Medical College offers a selection of degrees in Clinical Investigation (CI). These degrees include the Master of Science in Clinical Investigation and the Graduate Certificate in Clinical Investigation. Our required curriculum is designed to familiarize.</p>
-                    <button className='btn btn-outline-primary'>Read More</button>
+                    <button className='btn btn-outline-primary mb-2'>Read More</button>
                 </div>
                 <div>
                     <img src="https://www.amc.edu/academic/clinical_investigation/images/researcher.jpg" alt="" />

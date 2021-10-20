@@ -14,3 +14,10 @@
     border-radius: 15px;
     padding: 0 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .blog-description{
+        flex-direction: column;
+        margin: 15px 0px;
+    }
+  }
