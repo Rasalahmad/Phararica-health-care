@@ -8,9 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([]);
     const [error, setError] = useState('');
-    const [isToggle, setIsToggle] = useState(true);
 
-    
 
     const {signInUsingGoogle, handleLogin, signInUsingGithub} = useAuth();
     const location = useLocation();
