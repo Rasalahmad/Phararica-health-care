@@ -10,6 +10,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleRegister = (email, password, name) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -50,11 +51,14 @@ const useFirebase = () => {
             if(user){
                 setUser(user);
             }
+            setIsLoading(false)
         })
-    }, [user]);
+    }, [user, auth]);
     return {
         user,
         error,
+        setIsLoading,
+        isLoading,
         setUserName,
         handleRegister,
         handleLogin,

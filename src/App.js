@@ -11,9 +11,10 @@ import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/Shared/NotFound/NotFound';
 import Register from './components/Authentication/Register/Register';
 import Login from './components/Authentication/Login/Login';
-import AuthProvider from './components/AuthProvider/AuthProvider';
+
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Blogs from './components/Blogs/Blogs/Blogs';
+import AuthProvider from './components/context/AuthProvider';
 
 
 function App() {

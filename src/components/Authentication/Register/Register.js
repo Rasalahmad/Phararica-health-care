@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth'
 import './Register.css'
-
 const Register = () => {
 
 
@@ -11,34 +10,40 @@ const Register = () => {
     const [name, setName] = useState([]);
     const [error, setError] = useState([]);
 
-    const {signInUsingGoogle, handleRegister, signInUsingGithub, setUserName} = useAuth();
+    const {signInUsingGoogle, handleRegister, signInUsingGithub, setUserName, setIsLoading} = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || "/home"
 
     const handleGoogleSignUp = () => {
+        setIsLoading(true)
         signInUsingGoogle()
         .then(result => {
             history.push(redirect_url);
         })
         .catch(error => setError(error.message))
+        .finally(() => setIsLoading(false))
     }
      
     const handleGithubSignup = () => {
+        setIsLoading(true)
         signInUsingGithub()
         .then(result => {
             history.push(redirect_url);
         })
         .catch(error => setError(error.message))
+        .finally(() => setIsLoading(false))
     }
 
     const handleManualSignup = () => {
+        setIsLoading(true)
         handleRegister(email, password, name)
         .then(result => {
             history.push(redirect_url);
             setUserName(name);
         })
         .catch(error => setError(error.message))
+        .finally(() => setIsLoading(false))
     }
 
     const handleEmail = (e) => {
