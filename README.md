@@ -15,6 +15,12 @@ In the project directory,
 * User can take our service easily and for this first of all you need to create an account in our site.
 * User will realize that we are providing best doctors in this area.
 
+ Technology Used:
+ * React
+ * Firebase
+ * React Bootstrap
+ * React-router etc.
+
 description: 
 This website is about Paharica Health Care. In this project here has home page service page blog page doctors page sign in and sign up page. If you visit in service page you can see details service and you can select your service. But for details service first of all you need to register in our website using your email or google or github. If you already visit our site and create account you can see our detals service with just login. Thank you.......
 
